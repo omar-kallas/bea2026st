@@ -1,0 +1,6 @@
+/.vscode
+/logs_sbatch
+/__pycache__
+/models
+
+scratch.py
