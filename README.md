@@ -76,6 +76,7 @@ Run numeric fine-tuning then numeric prediction:
 python run_pipeline.py \
   --finetune_num \
   --predict_num \
+  --models_to_run numeric_cn_base_ipa_pos \
   --model_params_path models/num_model_parameters.csv \
   --dataset_split dev
 ```
