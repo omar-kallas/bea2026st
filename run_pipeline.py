@@ -6,7 +6,9 @@ from pathlib import Path
 
 from download import download_models
 from finetune import run_finetune
+from finetune_num import run_finetune_num
 from predict import run_predict
+from predict_num import run_predict_num
 from evaluate import run_evaluate
 
 from utils import configure_logging
@@ -22,7 +24,9 @@ def main():
     # Optional flags to run steps
     parser.add_argument("--download", action="store_true",help="Download baseline models from Hugging Face Hub")
     parser.add_argument("--finetune", action="store_true", help="Run finetuning step")
+    parser.add_argument("--finetune_num", action="store_true", help="Run finetuning step with numeric features")
     parser.add_argument("--predict", action="store_true", help="Run prediction step")
+    parser.add_argument("--predict_num", action="store_true", help="Run prediction step for numeric-feature models")
     parser.add_argument("--evaluate", action="store_true", help="Run evaluation step")
 
     # Configurable options
@@ -64,7 +68,9 @@ def main():
     steps=[]
     if args.download: steps.append("download")
     if args.finetune: steps.append("finetune")
+    if args.finetune_num: steps.append("finetune_num")
     if args.predict: steps.append("predict")
+    if args.predict_num: steps.append("predict_num")
     if args.evaluate: steps.append("evaluate")
 
     # Default: run all steps if no flags were provided
@@ -86,11 +92,29 @@ def main():
             models_to_run=args.models_to_run,
             seed=args.seed
         )
+    
+    # Run finetuning with numeric features
+    if "finetune_num" in steps:
+        logging.info("=== Running finetune with numeric features ===")
+        run_finetune_num(
+            model_params_path=args.model_params_path,
+            models_to_run=args.models_to_run,
+            seed=args.seed
+        )
 
     # Run predictions
     if "predict" in steps:
         logging.info("=== Running predict ===")
         run_predict(
+            model_params_path=args.model_params_path,
+            models_to_run=args.models_to_run,
+            dataset_split=args.dataset_split,
+        )
+    
+    # Run predictions for numeric-feature finetuned models
+    if "predict_num" in steps:
+        logging.info("=== Running numeric predict ===")
+        run_predict_num(
             model_params_path=args.model_params_path,
             models_to_run=args.models_to_run,
             dataset_split=args.dataset_split,

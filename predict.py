@@ -20,7 +20,7 @@ from utils import (
 )
 
 # Fixed paths 
-DATA_DIR = Path("data/")
+DATA_DIR = Path("data_enriched/")
 MODELS_DIR = Path("models/")
 PRED_DIR = Path("predictions/")
 

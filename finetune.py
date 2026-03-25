@@ -21,7 +21,7 @@ from utils import (
 )
 
 # Fixed paths 
-DATA_DIR = Path("data/")
+DATA_DIR = Path("data_enriched/")
 MODELS_DIR = Path("models/")
 
 def run_finetune(model_params_path, models_to_run, seed):

@@ -2,6 +2,7 @@
 import random
 import gc
 import logging
+import sys
 import csv
 from pathlib import Path
 from datetime import datetime
@@ -37,7 +38,7 @@ def configure_logging(verbose=False):
     )
 
     # Console handler
-    ch = logging.StreamHandler()
+    ch = logging.StreamHandler(sys.stdout)
     ch.setFormatter(formatter)
 
     # File handler

@@ -7,7 +7,7 @@ from scipy.stats import pearsonr
 from utils import print_evaluation_results
 
 # Fixed paths 
-DATA_DIR = Path("data/")
+DATA_DIR = Path("data_enriched/")
 PRED_DIR = Path("predictions/")
 RESULTS_DIR = Path("results/")
 
