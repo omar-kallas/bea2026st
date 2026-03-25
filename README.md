@@ -69,6 +69,19 @@ The pipeline now supports numeric-model training and inference with two added fl
 
 Both options use the same general pipeline arguments (`--models_to_run`, `--model_params_path`, `--dataset_split`, `--seed`, `--verbose`).
 
+## Installation
+
+Before creating the Conda environment, install `espeak-ng` (required by `enrich_data.py` for phonemization):
+
+- `espeak-ng` project and install instructions: https://github.com/espeak-ng/espeak-ng
+
+Then create and activate the project environment:
+
+```bash
+conda env create -f environment.yml
+conda activate baseline_env
+```
+
 ## Example Usage
 
 Run numeric fine-tuning then numeric prediction:
