@@ -1,0 +1,105 @@
+=== File Summary ===
+prediction file: predictions/closed/dev/cn/numeric_cn_base_ipa_preds.csv
+reference file : data/dev/cn/kvl_shared_task_cn_dev.csv
+id column      : item_id
+pred column    : prediction
+ref score col  : GLMM_score
+
+=== Merge Coverage ===
+reference rows           : 677
+prediction rows          : 677
+matched rows             : 677
+missing predictions      : 0
+extra predictions        : 0
+coverage (matched / ref) : 1.0000
+
+=== Global Metrics (matched rows) ===
+RMSE     : 1.1029
+MAE      : 0.8044
+Bias     : 0.1595  (positive => overprediction)
+Pearson  : 0.7635
+Spearman : 0.7676
+
+=== Accuracy Rates by |error| ===
+|error| <= 0.25 : 0.2245 (152/677)
+|error| <= 0.5  : 0.4357 (295/677)
+|error| <= 1    : 0.7134 (483/677)
+
+=== Tail Behavior (based on reference score quantiles) ===
+low cutoff  (0.25) : -1.1331
+high cutoff (0.75) : 1.2446
+
+High reference-score rows:
+count                            : 170
+mean ref score                   : 2.2306
+mean predicted score             : 1.7147
+mean error (pred - ref)          : -0.5159
+fraction predicted lower         : 0.7412
+fraction with error <= -1 : 0.2706
+
+Low reference-score rows:
+count                            : 170
+mean ref score                   : -2.0815
+mean predicted score             : -1.0060
+mean error (pred - ref)          : 1.0755
+fraction predicted higher        : 0.8529
+fraction with error >= +1 : 0.4647
+
+=== Reference-vs-Predicted Buckets (using reference cutoffs) ===
+pred_bucket  low  mid  high  All
+ref_bucket                      
+low           77   91     2  170
+mid           22  279    37  338
+high           1   52   116  169
+All          100  422   155  677
+
+=== RMSE by POS ===
+en_target_pos  count   rmse    mae    bias
+       adverb     36 1.4155 0.9454  0.5786
+         misc      4 1.1801 0.8997 -0.8997
+         verb    113 1.1638 0.8106 -0.0646
+  preposition      8 1.1401 1.0399 -0.0180
+    adjective    154 1.0859 0.8092  0.0519
+         noun    358 1.0573 0.7851  0.2557
+   determiner      3 0.4054 0.3571 -0.3571
+       number      1 0.2481 0.2481 -0.2481
+
+=== Most Accurate Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6117   3.521918    3.516480 -0.005437   0.005437 cn           week          noun
+    6458  -2.379008   -2.372874  0.006134   0.006134 cn        sheriff          noun
+    6680   0.033869    0.041640  0.007771   0.007771 cn          guilt          noun
+    6640  -0.578387   -0.566297  0.012090   0.012090 cn      duplicate          verb
+    6571   0.767217    0.781489  0.014272   0.014272 cn           mean     adjective
+    6693   1.237311    1.252134  0.014823   0.014823 cn        traffic          noun
+    6500   3.080893    3.095781  0.014888   0.014888 cn          white     adjective
+    6666  -0.502284   -0.481661  0.020623   0.020623 cn     recreation          noun
+    6445   2.755351    2.783280  0.027929   0.027929 cn           wind          noun
+    6527   3.454093    3.425467 -0.028626   0.028626 cn           news          noun
+
+=== Most Over-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score    error  abs_error L1 en_target_word en_target_pos
+    6412  -4.875364    1.433825 6.309189   6.309189 cn           root          verb
+    6161  -5.272413   -0.219514 5.052899   5.052899 cn         mighty        adverb
+    6632  -4.738275   -0.439982 4.298293   4.298293 cn         taking          noun
+    6126  -2.834493    1.032310 3.866803   3.866803 cn            bar          verb
+    6284  -3.189584    0.633378 3.822962   3.822962 cn          short        adverb
+    6738  -3.862685   -0.208113 3.654572   3.654572 cn        profile          noun
+    6649  -0.763061    2.736616 3.499678   3.499678 cn           trip          noun
+    6530  -2.675905    0.335323 3.011228   3.011228 cn         midway        adverb
+    6468  -2.545930    0.434325 2.980255   2.980255 cn          tried     adjective
+    6679  -3.979432   -1.021765 2.957667   2.957667 cn         caught     adjective
+
+=== Most Under-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6228   2.566549   -0.765737 -3.332286   3.332286 cn          latin     adjective
+    6483   1.783178   -1.420046 -3.203224   3.203224 cn       relation          noun
+    6688   2.590578   -0.159942 -2.750519   2.750519 cn       disagree          verb
+    6395   3.014243    0.443358 -2.570885   2.570885 cn         hotdog          noun
+    6269   2.645372    0.127083 -2.518289   2.518289 cn        chinese     adjective
+    6419   1.189128   -1.296239 -2.485366   2.485366 cn         relate          verb
+    6646   1.832251   -0.505165 -2.337416   2.337416 cn         butter          noun
+    6420   2.239646   -0.087136 -2.326782   2.326782 cn         differ          verb
+    6743   1.207718   -1.077683 -2.285400   2.285400 cn           beat          noun
+    6464   2.561994    0.352361 -2.209634   2.209634 cn        emotion          noun
+

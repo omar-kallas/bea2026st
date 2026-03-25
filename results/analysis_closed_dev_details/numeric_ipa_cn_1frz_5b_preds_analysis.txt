@@ -1,0 +1,105 @@
+=== File Summary ===
+prediction file: predictions/closed/dev/cn/numeric_ipa_cn_1frz_5b_preds.csv
+reference file : data/dev/cn/kvl_shared_task_cn_dev.csv
+id column      : item_id
+pred column    : prediction
+ref score col  : GLMM_score
+
+=== Merge Coverage ===
+reference rows           : 677
+prediction rows          : 677
+matched rows             : 677
+missing predictions      : 0
+extra predictions        : 0
+coverage (matched / ref) : 1.0000
+
+=== Global Metrics (matched rows) ===
+RMSE     : 1.0898
+MAE      : 0.8056
+Bias     : 0.2090  (positive => overprediction)
+Pearson  : 0.7740
+Spearman : 0.7754
+
+=== Accuracy Rates by |error| ===
+|error| <= 0.25 : 0.2319 (157/677)
+|error| <= 0.5  : 0.4092 (277/677)
+|error| <= 1    : 0.7046 (477/677)
+
+=== Tail Behavior (based on reference score quantiles) ===
+low cutoff  (0.25) : -1.1331
+high cutoff (0.75) : 1.2446
+
+High reference-score rows:
+count                            : 170
+mean ref score                   : 2.2306
+mean predicted score             : 1.8006
+mean error (pred - ref)          : -0.4300
+fraction predicted lower         : 0.7176
+fraction with error <= -1 : 0.2471
+
+Low reference-score rows:
+count                            : 170
+mean ref score                   : -2.0815
+mean predicted score             : -0.9944
+mean error (pred - ref)          : 1.0870
+fraction predicted higher        : 0.8471
+fraction with error >= +1 : 0.4824
+
+=== Reference-vs-Predicted Buckets (using reference cutoffs) ===
+pred_bucket  low  mid  high  All
+ref_bucket                      
+low           77   91     2  170
+mid           19  282    37  338
+high           0   47   122  169
+All           96  420   161  677
+
+=== RMSE by POS ===
+en_target_pos  count   rmse    mae    bias
+       adverb     36 1.3852 0.9670  0.5177
+         verb    113 1.1529 0.8188  0.0788
+    adjective    154 1.0877 0.8202  0.1343
+         misc      4 1.0495 0.8612 -0.8612
+         noun    358 1.0420 0.7785  0.2777
+  preposition      8 0.9681 0.8534  0.0032
+       number      1 0.7852 0.7852 -0.7852
+   determiner      3 0.6775 0.6433 -0.6433
+
+=== Most Accurate Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6722  -1.317468   -1.321379 -0.003910   0.003910 cn   intersection          noun
+    6758   2.474183    2.467527 -0.006656   0.006656 cn          count          verb
+    6652   0.619795    0.612802 -0.006993   0.006993 cn        missing     adjective
+    6524   0.259389    0.252317 -0.007072   0.007072 cn       hardware          noun
+    6556   3.471422    3.461760 -0.009663   0.009663 cn           late     adjective
+    6730   0.688142    0.676802 -0.011340   0.011340 cn       lipstick          noun
+    6587  -0.058226   -0.069825 -0.011600   0.011600 cn            sip          verb
+    6505   2.921226    2.933423  0.012197   0.012197 cn           grow          verb
+    6674   0.410537    0.423294  0.012757   0.012757 cn        unusual     adjective
+    6654   2.813970    2.801209 -0.012761   0.012761 cn         flower          noun
+
+=== Most Over-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score    error  abs_error L1 en_target_word en_target_pos
+    6412  -4.875364    1.766923 6.642287   6.642287 cn           root          verb
+    6738  -3.862685    0.589585 4.452270   4.452270 cn        profile          noun
+    6632  -4.738275   -0.501477 4.236798   4.236798 cn         taking          noun
+    6284  -3.189584    1.044143 4.233727   4.233727 cn          short        adverb
+    6161  -5.272413   -1.101919 4.170493   4.170493 cn         mighty        adverb
+    6649  -0.763061    2.824485 3.587546   3.587546 cn           trip          noun
+    6126  -2.834493    0.608697 3.443190   3.443190 cn            bar          verb
+    6468  -2.545930    0.854175 3.400105   3.400105 cn          tried     adjective
+    6679  -3.979432   -0.862003 3.117429   3.117429 cn         caught     adjective
+    6528  -3.477252   -0.617084 2.860169   2.860169 cn        sitting          noun
+
+=== Most Under-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6228   2.566549   -0.639543 -3.206092   3.206092 cn          latin     adjective
+    6533   3.078134    0.110767 -2.967367   2.967367 cn         killer          noun
+    6395   3.014243    0.510045 -2.504198   2.504198 cn         hotdog          noun
+    6483   1.783178   -0.671819 -2.454998   2.454998 cn       relation          noun
+    6688   2.590578    0.136062 -2.454516   2.454516 cn       disagree          verb
+    6419   1.189128   -1.197277 -2.386405   2.386405 cn         relate          verb
+    6420   2.239646    0.086698 -2.152949   2.152949 cn         differ          verb
+    6665   2.173946    0.083190 -2.090756   2.090756 cn           rely          verb
+    6683   0.394123   -1.642476 -2.036599   2.036599 cn     antisocial     adjective
+    6269   2.645372    0.613251 -2.032121   2.032121 cn        chinese     adjective
+

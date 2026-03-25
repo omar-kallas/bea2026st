@@ -1,0 +1,105 @@
+=== File Summary ===
+prediction file: predictions/closed/dev/de/numeric_de_simple_pos_preds.csv
+reference file : data/dev/de/kvl_shared_task_de_dev.csv
+id column      : item_id
+pred column    : prediction
+ref score col  : GLMM_score
+
+=== Merge Coverage ===
+reference rows           : 677
+prediction rows          : 677
+matched rows             : 677
+missing predictions      : 0
+extra predictions        : 0
+coverage (matched / ref) : 1.0000
+
+=== Global Metrics (matched rows) ===
+RMSE     : 1.2745
+MAE      : 0.9647
+Bias     : 0.4088  (positive => overprediction)
+Pearson  : 0.7499
+Spearman : 0.7635
+
+=== Accuracy Rates by |error| ===
+|error| <= 0.25 : 0.1728 (117/677)
+|error| <= 0.5  : 0.3442 (233/677)
+|error| <= 1    : 0.5982 (405/677)
+
+=== Tail Behavior (based on reference score quantiles) ===
+low cutoff  (0.25) : -1.4481
+high cutoff (0.75) : 1.3848
+
+High reference-score rows:
+count                            : 170
+mean ref score                   : 2.2179
+mean predicted score             : 1.7256
+mean error (pred - ref)          : -0.4923
+fraction predicted lower         : 0.7353
+fraction with error <= -1 : 0.2706
+
+Low reference-score rows:
+count                            : 170
+mean ref score                   : -2.4819
+mean predicted score             : -1.0136
+mean error (pred - ref)          : 1.4683
+fraction predicted higher        : 0.9176
+fraction with error >= +1 : 0.6588
+
+=== Reference-vs-Predicted Buckets (using reference cutoffs) ===
+pred_bucket  low  mid  high  All
+ref_bucket                      
+low           57  110     3  170
+mid           18  265    55  338
+high           0   53   116  169
+All           75  428   174  677
+
+=== RMSE by POS ===
+en_target_pos  count   rmse    mae    bias
+       adverb     36 1.6555 1.1956  0.8301
+         verb    113 1.4164 1.0295  0.5489
+   determiner      3 1.2972 1.0419 -0.3608
+    adjective    154 1.2851 0.9821  0.4431
+         misc      4 1.2187 1.0490  0.4742
+  preposition      8 1.1834 0.8706 -0.2506
+         noun    358 1.1788 0.9151  0.3309
+       number      1 0.6187 0.6187 -0.6187
+
+=== Most Accurate Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6261   0.306032    0.306380  0.000348   0.000348 de          cream          noun
+    6464   0.973687    0.972580 -0.001107   0.001107 de        emotion          noun
+    6195   1.697367    1.699339  0.001972   0.001972 de          shoot          verb
+    6223  -1.415985   -1.413615  0.002370   0.002370 de        despair          noun
+    6301   0.671395    0.666453 -0.004942   0.004942 de    masterpiece          noun
+    6456  -0.507854   -0.513087 -0.005234   0.005234 de        neglect          verb
+    6144   0.204855    0.199255 -0.005600   0.005600 de          doubt          verb
+    6674   0.233324    0.225303 -0.008021   0.008021 de        unusual     adjective
+    6458  -1.407792   -1.416250 -0.008459   0.008459 de        sheriff          noun
+    6629  -0.772872   -0.782304 -0.009431   0.009431 de      nominated     adjective
+
+=== Most Over-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score    error  abs_error L1 en_target_word en_target_pos
+    6126  -5.535934    0.998042 6.533976   6.533976 de            bar          verb
+    6284  -5.092750    0.887691 5.980441   5.980441 de          short        adverb
+    6679  -5.082057   -0.458080 4.623977   4.623977 de         caught     adjective
+    6528  -3.424462    0.628371 4.052833   4.052833 de        sitting          noun
+    6418  -1.823349    2.114446 3.937795   3.937795 de        crystal          noun
+    6254  -2.492226    1.327390 3.819617   3.819617 de        mistake          verb
+    6733  -3.182340    0.448939 3.631279   3.631279 de          grand     adjective
+    6440  -1.990454    1.617819 3.608273   3.608273 de         become          verb
+    6133  -3.418413   -0.006850 3.411563   3.411563 de       mistaken     adjective
+    6184  -3.752457   -0.364195 3.388263   3.388263 de          alarm          noun
+
+=== Most Under-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6548   3.185626   -0.174034 -3.359660   3.359660 de        booking          noun
+    6364   2.140600   -0.605256 -2.745856   2.745856 de           plus   preposition
+    6398   1.664632   -0.790774 -2.455406   2.455406 de       beginner          noun
+    6642   1.800465   -0.563596 -2.364061   2.364061 de     kidnapping          noun
+    6526   3.356227    0.997312 -2.358915   2.358915 de         dancer          noun
+    6332   0.777307   -1.500243 -2.277550   2.277550 de   questionable     adjective
+    6335   3.987093    1.714689 -2.272404   2.272404 de          camel          noun
+    6656   2.460282    0.199836 -2.260445   2.260445 de            far        adverb
+    6209   1.255410   -0.984919 -2.240329   2.240329 de          weigh          verb
+    6273   1.725556   -0.423245 -2.148801   2.148801 de        sailing          noun
+

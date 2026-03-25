@@ -1,0 +1,105 @@
+=== File Summary ===
+prediction file: predictions/closed/dev/cn/baseline_closed_pos_cn_preds.csv
+reference file : data/dev/cn/kvl_shared_task_cn_dev.csv
+id column      : item_id
+pred column    : prediction
+ref score col  : GLMM_score
+
+=== Merge Coverage ===
+reference rows           : 677
+prediction rows          : 677
+matched rows             : 677
+missing predictions      : 0
+extra predictions        : 0
+coverage (matched / ref) : 1.0000
+
+=== Global Metrics (matched rows) ===
+RMSE     : 1.1889
+MAE      : 0.9043
+Bias     : -0.0224  (positive => overprediction)
+Pearson  : 0.7203
+Spearman : 0.7251
+
+=== Accuracy Rates by |error| ===
+|error| <= 0.25 : 0.1861 (126/677)
+|error| <= 0.5  : 0.3560 (241/677)
+|error| <= 1    : 0.6603 (447/677)
+
+=== Tail Behavior (based on reference score quantiles) ===
+low cutoff  (0.25) : -1.1331
+high cutoff (0.75) : 1.2446
+
+High reference-score rows:
+count                            : 170
+mean ref score                   : 2.2306
+mean predicted score             : 1.6385
+mean error (pred - ref)          : -0.5921
+fraction predicted lower         : 0.7647
+fraction with error <= -1 : 0.2941
+
+Low reference-score rows:
+count                            : 170
+mean ref score                   : -2.0815
+mean predicted score             : -1.1332
+mean error (pred - ref)          : 0.9483
+fraction predicted higher        : 0.7706
+fraction with error >= +1 : 0.3882
+
+=== Reference-vs-Predicted Buckets (using reference cutoffs) ===
+pred_bucket  low  mid  high  All
+ref_bucket                      
+low          103   65     2  170
+mid           70  232    36  338
+high           0   52   117  169
+All          173  349   155  677
+
+=== RMSE by POS ===
+en_target_pos  count   rmse    mae    bias
+       adverb     36 1.4915 1.1058  0.7017
+         misc      4 1.4527 1.2943 -1.2943
+         verb    113 1.3513 0.9531 -0.2136
+  preposition      8 1.1408 1.0308 -0.1978
+         noun    358 1.1298 0.8637  0.0467
+    adjective    154 1.1194 0.9063 -0.1545
+   determiner      3 0.7211 0.6641 -0.6641
+       number      1 0.4822 0.4822 -0.4822
+
+=== Most Accurate Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6133  -0.026396   -0.020083  0.006313   0.006313 cn       mistaken     adjective
+    6723  -1.333124   -1.324623  0.008501   0.008501 cn      disgusted     adjective
+    6494   2.286607    2.277410 -0.009197   0.009197 cn           soul          noun
+    6589  -1.814188   -1.799136  0.015052   0.015052 cn      speculate          verb
+    6392   1.329054    1.313571 -0.015484   0.015484 cn         unfair     adjective
+    6152   2.497710    2.481570 -0.016140   0.016140 cn        evening          noun
+    6346  -1.772783   -1.791406 -0.018624   0.018624 cn      precision          noun
+    6431  -1.044377   -1.063341 -0.018964   0.018964 cn   mathematical     adjective
+    6762  -0.482062   -0.502592 -0.020529   0.020529 cn        endless     adjective
+    6684  -2.020403   -1.993666  0.026737   0.026737 cn    enforcement          noun
+
+=== Most Over-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score    error  abs_error L1 en_target_word en_target_pos
+    6412  -4.875364    2.193943 7.069307   7.069307 cn           root          verb
+    6161  -5.272413   -0.621749 4.650664   4.650664 cn         mighty        adverb
+    6738  -3.862685    0.563236 4.425921   4.425921 cn        profile          noun
+    6126  -2.834493    1.426025 4.260518   4.260518 cn            bar          verb
+    6632  -4.738275   -0.778878 3.959397   3.959397 cn         taking          noun
+    6530  -2.675905    0.825770 3.501675   3.501675 cn         midway        adverb
+    6649  -0.763061    2.721319 3.484380   3.484380 cn           trip          noun
+    6284  -3.189584   -0.057737 3.131847   3.131847 cn          short        adverb
+    6528  -3.477252   -0.511423 2.965830   2.965830 cn        sitting          noun
+    6634  -2.575024    0.282408 2.857431   2.857431 cn          unity          noun
+
+=== Most Under-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6533   3.078134   -0.165684 -3.243818   3.243818 cn         killer          noun
+    6419   1.189128   -1.957779 -3.146907   3.146907 cn         relate          verb
+    6405   2.093709   -1.037049 -3.130758   3.130758 cn       keyboard          noun
+    6665   2.173946   -0.517752 -2.691698   2.691698 cn           rely          verb
+    6763   2.265212   -0.310063 -2.575275   2.575275 cn           quit          verb
+    6688   2.590578    0.073998 -2.516580   2.516580 cn       disagree          verb
+    6541   0.967376   -1.470628 -2.438004   2.438004 cn        gesture          noun
+    6482   0.696402   -1.737394 -2.433796   2.433796 cn        qualify          verb
+    6526   3.064915    0.660968 -2.403947   2.403947 cn         dancer          noun
+    6483   1.783178   -0.577202 -2.360381   2.360381 cn       relation          noun
+

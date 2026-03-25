@@ -1,0 +1,105 @@
+=== File Summary ===
+prediction file: predictions/closed/dev/es/baseline_closed_simple_es_preds.csv
+reference file : data/dev/es/kvl_shared_task_es_dev.csv
+id column      : item_id
+pred column    : prediction
+ref score col  : GLMM_score
+
+=== Merge Coverage ===
+reference rows           : 677
+prediction rows          : 677
+matched rows             : 677
+missing predictions      : 0
+extra predictions        : 0
+coverage (matched / ref) : 1.0000
+
+=== Global Metrics (matched rows) ===
+RMSE     : 1.4082
+MAE      : 1.1043
+Bias     : 0.3547  (positive => overprediction)
+Pearson  : 0.7162
+Spearman : 0.7161
+
+=== Accuracy Rates by |error| ===
+|error| <= 0.25 : 0.1359 (92/677)
+|error| <= 0.5  : 0.2688 (182/677)
+|error| <= 1    : 0.5524 (374/677)
+
+=== Tail Behavior (based on reference score quantiles) ===
+low cutoff  (0.25) : -1.3660
+high cutoff (0.75) : 1.3685
+
+High reference-score rows:
+count                            : 170
+mean ref score                   : 2.5134
+mean predicted score             : 2.1296
+mean error (pred - ref)          : -0.3838
+fraction predicted lower         : 0.6059
+fraction with error <= -1 : 0.2588
+
+Low reference-score rows:
+count                            : 170
+mean ref score                   : -2.4400
+mean predicted score             : -0.9961
+mean error (pred - ref)          : 1.4439
+fraction predicted higher        : 0.9235
+fraction with error >= +1 : 0.6000
+
+=== Reference-vs-Predicted Buckets (using reference cutoffs) ===
+pred_bucket  low  mid  high  All
+ref_bucket                      
+low           69   94     7  170
+mid           39  234    65  338
+high           0   35   134  169
+All          108  363   206  677
+
+=== RMSE by POS ===
+en_target_pos  count   rmse    mae   bias
+   determiner      3 1.8759 1.6504 1.3499
+    adjective    154 1.5104 1.2258 0.4580
+  preposition      8 1.4008 1.0109 0.4035
+         noun    358 1.3830 1.0842 0.3053
+         verb    113 1.3722 1.0638 0.3049
+       adverb     36 1.3459 0.9544 0.4954
+         misc      4 0.6911 0.6328 0.0433
+       number      1 0.5639 0.5639 0.5639
+
+=== Most Accurate Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6584  -0.173514   -0.171835  0.001679   0.001679 es         trader          noun
+    6343  -0.604779   -0.601627  0.003152   0.003152 es       cheerful     adjective
+    6679   0.605149    0.612125  0.006976   0.006976 es         caught     adjective
+    6706   2.349049    2.358216  0.009166   0.009166 es       historic     adjective
+    6650  -1.018665   -1.006837  0.011828   0.011828 es simultaneously        adverb
+    6372   0.195246    0.181708 -0.013538   0.013538 es          flash          verb
+    6127  -2.487853   -2.468691  0.019161   0.019161 es       revision          noun
+    6426   1.239480    1.260602  0.021122   0.021122 es           vote          noun
+    6207  -0.359350   -0.337041  0.022309   0.022309 es            set          noun
+    6532   2.091129    2.119221  0.028092   0.028092 es          solve          verb
+
+=== Most Over-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score    error  abs_error L1 en_target_word en_target_pos
+    6634  -3.061057    2.623677 5.684734   5.684734 es          unity          noun
+    6126  -4.582802    0.892384 5.475186   5.475186 es            bar          verb
+    6733  -3.603838    0.903945 4.507784   4.507784 es          grand     adjective
+    6414  -2.113978    2.334812 4.448790   4.448790 es           grin          noun
+    6161  -4.738488   -0.566968 4.171520   4.171520 es         mighty        adverb
+    6284  -3.570391    0.465410 4.035800   4.035800 es          short        adverb
+    6528  -4.601833   -0.568347 4.033485   4.033485 es        sitting          noun
+    6450  -4.955905   -0.951264 4.004642   4.004642 es        defined     adjective
+    6720  -0.862061    3.037505 3.899566   3.899566 es           gown          noun
+    6252  -1.853239    2.009209 3.862448   3.862448 es     assistance          noun
+
+=== Most Under-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6533   3.077535   -0.862822 -3.940357   3.940357 es         killer          noun
+    6255   0.427744   -2.501333 -2.929078   2.929078 es        venture          verb
+    6234   3.438724    0.606199 -2.832526   2.832526 es      expensive     adjective
+    6588   2.204272   -0.553763 -2.758036   2.758036 es         poison          noun
+    6316   4.172205    1.440157 -2.732048   2.732048 es         atomic     adjective
+    6673   0.698841   -1.961922 -2.660762   2.660762 es     incomplete     adjective
+    6238   1.413202   -1.080764 -2.493966   2.493966 es      memorable     adjective
+    6142   0.468671   -1.967933 -2.436604   2.436604 es      parameter          noun
+    6568   0.522291   -1.912952 -2.435242   2.435242 es       argument          noun
+    6181   1.368515   -0.992318 -2.360833   2.360833 es       quantity          noun
+

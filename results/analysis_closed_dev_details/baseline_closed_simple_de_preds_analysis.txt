@@ -1,0 +1,105 @@
+=== File Summary ===
+prediction file: predictions/closed/dev/de/baseline_closed_simple_de_preds.csv
+reference file : data/dev/de/kvl_shared_task_de_dev.csv
+id column      : item_id
+pred column    : prediction
+ref score col  : GLMM_score
+
+=== Merge Coverage ===
+reference rows           : 677
+prediction rows          : 677
+matched rows             : 677
+missing predictions      : 0
+extra predictions        : 0
+coverage (matched / ref) : 1.0000
+
+=== Global Metrics (matched rows) ===
+RMSE     : 1.3578
+MAE      : 1.0308
+Bias     : 0.4527  (positive => overprediction)
+Pearson  : 0.7210
+Spearman : 0.7296
+
+=== Accuracy Rates by |error| ===
+|error| <= 0.25 : 0.1536 (104/677)
+|error| <= 0.5  : 0.3323 (225/677)
+|error| <= 1    : 0.5982 (405/677)
+
+=== Tail Behavior (based on reference score quantiles) ===
+low cutoff  (0.25) : -1.4481
+high cutoff (0.75) : 1.3848
+
+High reference-score rows:
+count                            : 170
+mean ref score                   : 2.2179
+mean predicted score             : 1.8942
+mean error (pred - ref)          : -0.3237
+fraction predicted lower         : 0.6000
+fraction with error <= -1 : 0.2000
+
+Low reference-score rows:
+count                            : 170
+mean ref score                   : -2.4819
+mean predicted score             : -1.0108
+mean error (pred - ref)          : 1.4711
+fraction predicted higher        : 0.9353
+fraction with error >= +1 : 0.5824
+
+=== Reference-vs-Predicted Buckets (using reference cutoffs) ===
+pred_bucket  low  mid  high  All
+ref_bucket                      
+low           67   98     5  170
+mid           23  252    63  338
+high           0   41   128  169
+All           90  391   196  677
+
+=== RMSE by POS ===
+en_target_pos  count   rmse    mae    bias
+       adverb     36 1.6097 1.1446  0.8341
+  preposition      8 1.4400 1.0001 -0.6738
+   determiner      3 1.4223 1.2823  0.0648
+    adjective    154 1.4079 1.0552  0.4804
+         verb    113 1.4029 0.9975  0.5177
+         noun    358 1.2934 1.0226  0.4085
+         misc      4 1.1818 0.8721  0.7455
+       number      1 0.0419 0.0419 -0.0419
+
+=== Most Accurate Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6209   1.255410    1.258998  0.003589   0.003589 de          weigh          verb
+    6704   2.516647    2.509164 -0.007483   0.007483 de           meal          noun
+    6598   2.016992    2.029793  0.012801   0.012801 de            jam          noun
+    6174   1.751765    1.764970  0.013205   0.013205 de       organism          noun
+    6226   0.560082    0.544528 -0.015555   0.015555 de fundamentalist     adjective
+    6363   2.842170    2.818762 -0.023408   0.023408 de          drink          verb
+    6218   1.440176    1.464430  0.024254   0.024254 de        dressed     adjective
+    6555  -1.502167   -1.474529  0.027638   0.027638 de       resource          noun
+    6205   0.003381    0.032267  0.028886   0.028886 de          brick          noun
+    6375   1.660566    1.629944 -0.030622   0.030622 de          taste          noun
+
+=== Most Over-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score    error  abs_error L1 en_target_word en_target_pos
+    6126  -5.535934    0.363509 5.899444   5.899444 de            bar          verb
+    6284  -5.092750    0.586570 5.679320   5.679320 de          short        adverb
+    6313  -3.824511    0.844326 4.668837   4.668837 de            jam          verb
+    6636  -3.690239    0.905498 4.595737   4.595737 de   communicator          noun
+    6254  -2.492226    1.846704 4.338930   4.338930 de        mistake          verb
+    6184  -3.752457    0.572093 4.324550   4.324550 de          alarm          noun
+    6679  -5.082057   -0.783879 4.298178   4.298178 de         caught     adjective
+    6733  -3.182340    0.756938 3.939278   3.939278 de          grand     adjective
+    6133  -3.418413    0.461088 3.879501   3.879501 de       mistaken     adjective
+    6323  -2.454230    1.402578 3.856807   3.856807 de      frontline          noun
+
+=== Most Under-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6364   2.140600   -1.265787 -3.406387   3.406387 de           plus   preposition
+    6548   3.185626   -0.168229 -3.353856   3.353856 de        booking          noun
+    6711   1.734537   -1.339788 -3.074325   3.074325 de        falling     adjective
+    6642   1.800465   -1.143034 -2.943498   2.943498 de     kidnapping          noun
+    6423   2.244037   -0.645720 -2.889756   2.889756 de           logo          noun
+    6705   1.778533   -0.888765 -2.667298   2.667298 de           pull          verb
+    6311   2.192250   -0.444830 -2.637079   2.637079 de       indirect     adjective
+    6653   2.030469   -0.406005 -2.436474   2.436474 de       listener          noun
+    6332   0.777307   -1.618511 -2.395818   2.395818 de   questionable     adjective
+    6335   3.987093    1.598947 -2.388146   2.388146 de          camel          noun
+

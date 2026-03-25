@@ -1,0 +1,105 @@
+=== File Summary ===
+prediction file: predictions/closed/dev/es/baseline_closed_rich_es_preds.csv
+reference file : data/dev/es/kvl_shared_task_es_dev.csv
+id column      : item_id
+pred column    : prediction
+ref score col  : GLMM_score
+
+=== Merge Coverage ===
+reference rows           : 677
+prediction rows          : 677
+matched rows             : 677
+missing predictions      : 0
+extra predictions        : 0
+coverage (matched / ref) : 1.0000
+
+=== Global Metrics (matched rows) ===
+RMSE     : 1.3339
+MAE      : 1.0287
+Bias     : 0.3071  (positive => overprediction)
+Pearson  : 0.7434
+Spearman : 0.7440
+
+=== Accuracy Rates by |error| ===
+|error| <= 0.25 : 0.1640 (111/677)
+|error| <= 0.5  : 0.3264 (221/677)
+|error| <= 1    : 0.5790 (392/677)
+
+=== Tail Behavior (based on reference score quantiles) ===
+low cutoff  (0.25) : -1.3660
+high cutoff (0.75) : 1.3685
+
+High reference-score rows:
+count                            : 170
+mean ref score                   : 2.5134
+mean predicted score             : 2.0794
+mean error (pred - ref)          : -0.4340
+fraction predicted lower         : 0.6706
+fraction with error <= -1 : 0.2353
+
+Low reference-score rows:
+count                            : 170
+mean ref score                   : -2.4400
+mean predicted score             : -1.1017
+mean error (pred - ref)          : 1.3383
+fraction predicted higher        : 0.8588
+fraction with error >= +1 : 0.5412
+
+=== Reference-vs-Predicted Buckets (using reference cutoffs) ===
+pred_bucket  low  mid  high  All
+ref_bucket                      
+low           78   86     6  170
+mid           47  230    61  338
+high           0   38   131  169
+All          125  354   198  677
+
+=== RMSE by POS ===
+en_target_pos  count   rmse    mae   bias
+   determiner      3 2.3164 1.5855 1.0637
+    adjective    154 1.4573 1.1328 0.3825
+  preposition      8 1.4193 1.1636 0.3956
+       adverb     36 1.3535 0.9669 0.4792
+         noun    358 1.2943 1.0099 0.2717
+         verb    113 1.2545 0.9668 0.2419
+         misc      4 0.6538 0.4684 0.1026
+       number      1 0.4012 0.4012 0.4012
+
+=== Most Accurate Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6288  -2.668629   -2.668288  0.000341   0.000341 es       majestic     adjective
+    6559   0.356919    0.351986 -0.004933   0.004933 es         detail          noun
+    6240  -0.551013   -0.544654  0.006359   0.006359 es     faithfully        adverb
+    6540   1.283690    1.275430 -0.008260   0.008260 es           risk          verb
+    6162  -2.041153   -2.031868  0.009286   0.009286 es          evoke          verb
+    6391   3.249662    3.232687 -0.016974   0.016974 es         artist          noun
+    6453   3.634000    3.608245 -0.025754   0.025754 es          hello          misc
+    6603   0.789808    0.763875 -0.025932   0.025932 es     experience          noun
+    6183   0.858309    0.831696 -0.026613   0.026613 es         behave          verb
+    6396   0.510639    0.483092 -0.027547   0.027547 es       survivor          noun
+
+=== Most Over-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score    error  abs_error L1 en_target_word en_target_pos
+    6450  -4.955905    0.277497 5.233402   5.233402 es        defined     adjective
+    6634  -3.061057    1.906619 4.967676   4.967676 es          unity          noun
+    6126  -4.582802   -0.064683 4.518119   4.518119 es            bar          verb
+    6414  -2.113978    2.216803 4.330781   4.330781 es           grin          noun
+    6578  -4.033284    0.231104 4.264387   4.264387 es    destruction          noun
+    6161  -4.738488   -0.536306 4.202182   4.202182 es         mighty        adverb
+    6733  -3.603838    0.565391 4.169229   4.169229 es          grand     adjective
+    6132  -3.527445    0.446282 3.973726   3.973726 es         latter    determiner
+    6528  -4.601833   -0.651331 3.950501   3.950501 es        sitting          noun
+    6110  -1.737771    1.762402 3.500172   3.500172 es         tragic     adjective
+
+=== Most Under-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6141   1.010259   -2.077781 -3.088040   3.088040 es        specify          verb
+    6638   3.567384    0.582890 -2.984494   2.984494 es           slow     adjective
+    6234   3.438724    0.561014 -2.877710   2.877710 es      expensive     adjective
+    6533   3.077535    0.302818 -2.774717   2.774717 es         killer          noun
+    6285   3.275802    0.563189 -2.712613   2.712613 es           fast     adjective
+    6588   2.204272   -0.403473 -2.607745   2.607745 es         poison          noun
+    6673   0.698841   -1.837093 -2.535934   2.535934 es     incomplete     adjective
+    6759   0.288173   -2.195922 -2.484095   2.484095 es     exhausting     adjective
+    6479   1.239197   -1.243119 -2.482316   2.482316 es           rude     adjective
+    6301   0.834205   -1.611291 -2.445496   2.445496 es    masterpiece          noun
+

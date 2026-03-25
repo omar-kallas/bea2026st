@@ -1,0 +1,105 @@
+=== File Summary ===
+prediction file: predictions/closed/dev/de/numeric_de_base_pos_preds.csv
+reference file : data/dev/de/kvl_shared_task_de_dev.csv
+id column      : item_id
+pred column    : prediction
+ref score col  : GLMM_score
+
+=== Merge Coverage ===
+reference rows           : 677
+prediction rows          : 677
+matched rows             : 677
+missing predictions      : 0
+extra predictions        : 0
+coverage (matched / ref) : 1.0000
+
+=== Global Metrics (matched rows) ===
+RMSE     : 1.2551
+MAE      : 0.9615
+Bias     : 0.3443  (positive => overprediction)
+Pearson  : 0.7500
+Spearman : 0.7605
+
+=== Accuracy Rates by |error| ===
+|error| <= 0.25 : 0.1684 (114/677)
+|error| <= 0.5  : 0.3560 (241/677)
+|error| <= 1    : 0.6278 (425/677)
+
+=== Tail Behavior (based on reference score quantiles) ===
+low cutoff  (0.25) : -1.4481
+high cutoff (0.75) : 1.3848
+
+High reference-score rows:
+count                            : 170
+mean ref score                   : 2.2179
+mean predicted score             : 1.6799
+mean error (pred - ref)          : -0.5380
+fraction predicted lower         : 0.7412
+fraction with error <= -1 : 0.2412
+
+Low reference-score rows:
+count                            : 170
+mean ref score                   : -2.4819
+mean predicted score             : -1.0473
+mean error (pred - ref)          : 1.4346
+fraction predicted higher        : 0.9412
+fraction with error >= +1 : 0.6118
+
+=== Reference-vs-Predicted Buckets (using reference cutoffs) ===
+pred_bucket  low  mid  high  All
+ref_bucket                      
+low           68  100     2  170
+mid           21  267    50  338
+high           0   58   111  169
+All           89  425   163  677
+
+=== RMSE by POS ===
+en_target_pos  count   rmse    mae    bias
+       adverb     36 1.4804 1.0564  0.7006
+   determiner      3 1.4572 1.3297 -0.2060
+  preposition      8 1.4271 1.1491 -0.5870
+         verb    113 1.3157 0.9476  0.3876
+    adjective    154 1.3086 0.9975  0.4847
+         noun    358 1.1836 0.9370  0.2591
+         misc      4 0.9572 0.7422  0.6558
+       number      1 0.6065 0.6065 -0.6065
+
+=== Most Accurate Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6288  -2.228834   -2.229250 -0.000416   0.000416 de       majestic     adjective
+    6365   1.067694    1.066145 -0.001549   0.001549 de     restaurant          noun
+    6281  -1.571596   -1.568118  0.003478   0.003478 de   conservation          noun
+    6614   2.243906    2.239777 -0.004129   0.004129 de           dead     adjective
+    6618   2.347456    2.340824 -0.006633   0.006633 de       american          noun
+    6232   0.064418    0.049675 -0.014744   0.014744 de    participant          noun
+    6171   0.863769    0.879044  0.015275   0.015275 de        warming          noun
+    6592   0.682595    0.666012 -0.016583   0.016583 de         lyrics          noun
+    6300   1.635102    1.613798 -0.021303   0.021303 de         murder          verb
+    6380   2.289109    2.266380 -0.022730   0.022730 de            low     adjective
+
+=== Most Over-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score    error  abs_error L1 en_target_word en_target_pos
+    6284  -5.092750    0.726151 5.818902   5.818902 de          short        adverb
+    6126  -5.535934   -0.275388 5.260546   5.260546 de            bar          verb
+    6679  -5.082057   -0.675407 4.406650   4.406650 de         caught     adjective
+    6636  -3.690239    0.495833 4.186072   4.186072 de   communicator          noun
+    6644  -4.104437   -0.295899 3.808538   3.808538 de  impressionist          noun
+    6733  -3.182340    0.562070 3.744410   3.744410 de          grand     adjective
+    6528  -3.424462    0.071208 3.495670   3.495670 de        sitting          noun
+    6613  -1.634207    1.855735 3.489941   3.489941 de           like     adjective
+    6254  -2.492226    0.953804 3.446031   3.446031 de        mistake          verb
+    6747  -2.707912    0.718216 3.426128   3.426128 de        cooling     adjective
+
+=== Most Under-Predicted Samples (top 10) ===
+ item_id  ref_score  pred_score     error  abs_error L1 en_target_word en_target_pos
+    6548   3.185626    0.006636 -3.178991   3.178991 de        booking          noun
+    6364   2.140600   -0.848498 -2.989098   2.989098 de           plus   preposition
+    6367   1.579612   -1.336455 -2.916067   2.916067 de         talent          noun
+    6642   1.800465   -1.053262 -2.853727   2.853727 de     kidnapping          noun
+    6763   1.492432   -0.991549 -2.483981   2.483981 de           quit          verb
+    6653   2.030469   -0.260005 -2.290474   2.290474 de       listener          noun
+    6526   3.356227    1.146473 -2.209755   2.209755 de         dancer          noun
+    6335   3.987093    1.807820 -2.179272   2.179272 de          camel          noun
+    6423   2.244037    0.137014 -2.107022   2.107022 de           logo          noun
+    6101   0.486773   -1.602104 -2.088877   2.088877 de       softness          noun
+
