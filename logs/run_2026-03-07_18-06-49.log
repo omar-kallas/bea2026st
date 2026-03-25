@@ -1,0 +1,23 @@
+2026-03-07 18:06 | INFO | === Running finetune with numeric features ===
+2026-03-07 18:06 | INFO | Fine-tuning numeric model: numeric_cn_simple...
+2026-03-07 18:07 | INFO | Using learning rates for numeric_cn_simple: ffn=0.00100000, encoder=0.00003000
+2026-03-07 18:11 | INFO | Unfroze pretrained encoder at epoch 1.00 (freeze_base_epochs=1).
+2026-03-07 19:02 | INFO | Numeric model numeric_cn_simple fine-tuned and saved at models/numeric_cn_simple
+2026-03-07 19:02 | INFO | Fine-tuning numeric model: numeric_de_simple...
+2026-03-07 19:02 | INFO | Using learning rates for numeric_de_simple: ffn=0.00100000, encoder=0.00003000
+2026-03-07 19:06 | INFO | Unfroze pretrained encoder at epoch 1.00 (freeze_base_epochs=1).
+2026-03-07 19:50 | INFO | Numeric model numeric_de_simple fine-tuned and saved at models/numeric_de_simple
+2026-03-07 19:50 | INFO | Fine-tuning numeric model: numeric_es_simple...
+2026-03-07 19:51 | INFO | Using learning rates for numeric_es_simple: ffn=0.00100000, encoder=0.00003000
+2026-03-07 19:53 | INFO | Unfroze pretrained encoder at epoch 1.00 (freeze_base_epochs=1).
+2026-03-07 20:22 | INFO | Numeric model numeric_es_simple fine-tuned and saved at models/numeric_es_simple
+2026-03-07 20:22 | INFO | === Running numeric predict ===
+2026-03-07 20:22 | INFO | Predicting with numeric model numeric_cn_simple on L1=cn
+2026-03-07 20:23 | INFO | Getting dev predictions...
+2026-03-07 20:23 | INFO | Saved predictions for numeric_cn_simple on cn dev set: predictions/closed/dev/cn/numeric_cn_simple_preds.csv
+2026-03-07 20:23 | INFO | Predicting with numeric model numeric_de_simple on L1=de
+2026-03-07 20:23 | INFO | Getting dev predictions...
+2026-03-07 20:24 | INFO | Saved predictions for numeric_de_simple on de dev set: predictions/closed/dev/de/numeric_de_simple_preds.csv
+2026-03-07 20:24 | INFO | Predicting with numeric model numeric_es_simple on L1=es
+2026-03-07 20:24 | INFO | Getting dev predictions...
+2026-03-07 20:24 | INFO | Saved predictions for numeric_es_simple on es dev set: predictions/closed/dev/es/numeric_es_simple_preds.csv

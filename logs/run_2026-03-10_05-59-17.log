@@ -1,0 +1,9 @@
+2026-03-10 05:59 | INFO | === Running finetune with numeric features ===
+2026-03-10 05:59 | INFO | Fine-tuning numeric model: numeric_cn_base...
+2026-03-10 05:59 | INFO | Using learning rates for numeric_cn_base: ffn=0.00100000, encoder=0.00003000
+2026-03-10 06:09 | INFO | Unfroze pretrained encoder at epoch 1.00 (freeze_base_epochs=1).
+2026-03-10 07:52 | INFO | Numeric model numeric_cn_base fine-tuned and saved at models/numeric_cn_base
+2026-03-10 07:52 | INFO | === Running numeric predict ===
+2026-03-10 07:53 | INFO | Predicting with numeric model numeric_cn_base on L1=cn
+2026-03-10 07:53 | INFO | Getting dev predictions...
+2026-03-10 07:54 | INFO | Saved predictions for numeric_cn_base on cn dev set: predictions/closed/dev/cn/numeric_cn_base_preds.csv

@@ -1,0 +1,49 @@
+2026-02-25 12:56 | INFO | === Running finetune ===
+2026-02-25 12:56 | INFO | Fine-tuning model: baseline_closed_rich_cn...
+2026-02-25 12:56 | ERROR | Failed model baseline_closed_rich_cn
+Traceback (most recent call last):
+  File "/home/omar.kallas/Desktop/bea2026st/finetune.py", line 56, in run_finetune
+    preprocessed_ds = preprocess_dataset(hf_dataset, cols_to_merge, sep_token)
+  File "/home/omar.kallas/Desktop/bea2026st/utils.py", line 224, in preprocess_dataset
+    ds_dict = ds_dict.map(
+              ~~~~~~~~~~~^
+        merge_cols,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        desc="Formatting input text"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).rename_column("GLMM_score", "label").remove_columns(cols_to_remove)
+    ^
+  File "/home/omar.kallas/miniconda3/envs/baseline_env/lib/python3.13/site-packages/datasets/dataset_dict.py", line 953, in map
+    dataset_dict[split] = dataset.map(
+                          ~~~~~~~~~~~^
+        function=function,
+        ^^^^^^^^^^^^^^^^^^
+    ...<16 lines>...
+        try_original_type=try_original_type,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/omar.kallas/miniconda3/envs/baseline_env/lib/python3.13/site-packages/datasets/arrow_dataset.py", line 562, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+                                           ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar.kallas/miniconda3/envs/baseline_env/lib/python3.13/site-packages/datasets/arrow_dataset.py", line 3343, in map
+    for rank, done, content in Dataset._map_single(**unprocessed_kwargs):
+                               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar.kallas/miniconda3/envs/baseline_env/lib/python3.13/site-packages/datasets/arrow_dataset.py", line 3699, in _map_single
+    for i, batch in iter_outputs(shard_iterable):
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/omar.kallas/miniconda3/envs/baseline_env/lib/python3.13/site-packages/datasets/arrow_dataset.py", line 3649, in iter_outputs
+    yield i, apply_function(example, i, offset=offset)
+             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar.kallas/miniconda3/envs/baseline_env/lib/python3.13/site-packages/datasets/arrow_dataset.py", line 3572, in apply_function
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "/home/omar.kallas/Desktop/bea2026st/utils.py", line 191, in merge_cols
+    rows=zip(*(batch[col] for col in cols_to_merge))
+  File "/home/omar.kallas/Desktop/bea2026st/utils.py", line 191, in <genexpr>
+    rows=zip(*(batch[col] for col in cols_to_merge))
+               ~~~~~^^^^^
+  File "/home/omar.kallas/miniconda3/envs/baseline_env/lib/python3.13/site-packages/datasets/formatting/formatting.py", line 283, in __getitem__
+    value = self.data[key]
+            ~~~~~~~~~^^^^^
+KeyError: 'freq'

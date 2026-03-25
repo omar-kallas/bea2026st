@@ -1,0 +1,4 @@
+2026-03-07 20:24 | INFO | === Running finetune with numeric features ===
+2026-03-07 20:24 | INFO | Fine-tuning numeric model: numeric_cn_simple_ipa...
+2026-03-07 20:25 | INFO | Using learning rates for numeric_cn_simple_ipa: ffn=0.00100000, encoder=0.00003000
+2026-03-07 20:46 | INFO | Unfroze pretrained encoder at epoch 1.00 (freeze_base_epochs=1).

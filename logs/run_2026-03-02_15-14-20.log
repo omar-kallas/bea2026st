@@ -1,0 +1,13 @@
+2026-03-02 15:14 | INFO | === Running finetune with numeric features ===
+2026-03-02 15:14 | INFO | Fine-tuning numeric model: numeric_ipa_cn...
+2026-03-02 15:14 | INFO | Using learning rates for numeric_ipa_cn: ffn=0.00050000, encoder=0.00002000
+2026-03-02 15:27 | INFO | Unfroze pretrained encoder at epoch 2.00 (freeze_base_epochs=2).
+2026-03-02 16:01 | INFO | Numeric model numeric_ipa_cn fine-tuned and saved at models/numeric_ipa_cn
+2026-03-02 16:01 | INFO | Fine-tuning numeric model: numeric_ipa_de...
+2026-03-02 16:01 | INFO | Using learning rates for numeric_ipa_de: ffn=0.00050000, encoder=0.00002000
+2026-03-02 16:08 | INFO | Unfroze pretrained encoder at epoch 2.00 (freeze_base_epochs=2).
+2026-03-02 16:30 | INFO | Numeric model numeric_ipa_de fine-tuned and saved at models/numeric_ipa_de
+2026-03-02 16:30 | INFO | Fine-tuning numeric model: numeric_ipa_es...
+2026-03-02 16:31 | INFO | Using learning rates for numeric_ipa_es: ffn=0.00050000, encoder=0.00002000
+2026-03-02 16:35 | INFO | Unfroze pretrained encoder at epoch 2.00 (freeze_base_epochs=2).
+2026-03-02 16:51 | INFO | Numeric model numeric_ipa_es fine-tuned and saved at models/numeric_ipa_es

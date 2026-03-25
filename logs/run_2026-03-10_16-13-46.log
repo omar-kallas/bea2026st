@@ -1,0 +1,9 @@
+2026-03-10 16:13 | INFO | === Running finetune with numeric features ===
+2026-03-10 16:13 | INFO | Fine-tuning numeric model: numeric_de_base_ipa...
+2026-03-10 16:14 | INFO | Using learning rates for numeric_de_base_ipa: ffn=0.00100000, encoder=0.00003000
+2026-03-10 16:30 | INFO | Unfroze pretrained encoder at epoch 1.00 (freeze_base_epochs=1).
+2026-03-10 19:24 | INFO | Numeric model numeric_de_base_ipa fine-tuned and saved at models/numeric_de_base_ipa
+2026-03-10 19:24 | INFO | === Running numeric predict ===
+2026-03-10 19:24 | INFO | Predicting with numeric model numeric_de_base_ipa on L1=de
+2026-03-10 19:24 | INFO | Getting dev predictions...
+2026-03-10 19:26 | INFO | Saved predictions for numeric_de_base_ipa on de dev set: predictions/closed/dev/de/numeric_de_base_ipa_preds.csv

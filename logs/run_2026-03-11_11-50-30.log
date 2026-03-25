@@ -1,0 +1,9 @@
+2026-03-11 11:50 | INFO | === Running finetune with numeric features ===
+2026-03-11 11:50 | INFO | Fine-tuning numeric model: numeric_es_base_ipa_pos...
+2026-03-11 11:50 | INFO | Using learning rates for numeric_es_base_ipa_pos: ffn=0.00100000, encoder=0.00003000
+2026-03-11 12:03 | INFO | Unfroze pretrained encoder at epoch 1.00 (freeze_base_epochs=1).
+2026-03-11 14:14 | INFO | Numeric model numeric_es_base_ipa_pos fine-tuned and saved at models/numeric_es_base_ipa_pos
+2026-03-11 14:14 | INFO | === Running numeric predict ===
+2026-03-11 14:14 | INFO | Predicting with numeric model numeric_es_base_ipa_pos on L1=es
+2026-03-11 14:14 | INFO | Getting dev predictions...
+2026-03-11 14:15 | INFO | Saved predictions for numeric_es_base_ipa_pos on es dev set: predictions/closed/dev/es/numeric_es_base_ipa_pos_preds.csv

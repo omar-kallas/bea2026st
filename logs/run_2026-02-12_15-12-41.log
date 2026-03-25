@@ -1,0 +1,23 @@
+2026-02-12 15:12 | INFO | === Running evaluate ===
+2026-02-12 15:12 | INFO | Evaluating pred file baseline_closed_de_preds.csv on de dev set...
+2026-02-12 15:12 | INFO | Evaluating pred file baseline_closed_cn_preds.csv on cn dev set...
+2026-02-12 15:12 | INFO | Evaluating pred file baseline_closed_es_preds.csv on es dev set...
+2026-02-12 15:12 | INFO | Evaluating pred file baseline_open_xx_preds.csv on cn dev set...
+2026-02-12 15:12 | INFO | Evaluating pred file baseline_open_xx_preds.csv on es dev set...
+2026-02-12 15:12 | INFO | Evaluating pred file baseline_open_xx_preds.csv on de dev set...
+2026-02-12 15:12 | INFO | Evaluation summary:
+
+CLOSED TRACK
+------------
+             model L1  rmse  pearson
+baseline_closed_es es 1.357    0.748
+baseline_closed_de de 1.328    0.753
+baseline_closed_cn cn 1.175    0.736
+
+OPEN TRACK
+----------
+           model L1  rmse  pearson
+baseline_open_xx es 1.206    0.787
+baseline_open_xx de 1.149    0.800
+baseline_open_xx cn 1.021    0.804
+2026-02-12 15:12 | INFO | Saved evaluation results to results/results_summary_dev.csv

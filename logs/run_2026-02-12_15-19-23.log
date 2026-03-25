@@ -1,0 +1,58 @@
+2026-02-12 15:19 | INFO | === Running finetune ===
+2026-02-12 15:19 | INFO | Fine-tuning model: baseline_closed_simple_cn...
+2026-02-12 15:19 | WARNING | Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2026-02-12 15:19 | WARNING | Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2026-02-12 15:33 | INFO | Model baseline_closed_simple_cn fine-tuned and saved at models/baseline_closed_simple_cn
+2026-02-12 15:33 | INFO | Fine-tuning model: baseline_closed_simple_de...
+2026-02-12 15:33 | WARNING | Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2026-02-12 15:33 | WARNING | Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2026-02-12 15:45 | INFO | Model baseline_closed_simple_de fine-tuned and saved at models/baseline_closed_simple_de
+2026-02-12 15:45 | INFO | Fine-tuning model: baseline_closed_simple_es...
+2026-02-12 15:46 | WARNING | Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2026-02-12 15:46 | WARNING | Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at xlm-roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2026-02-12 15:55 | INFO | Model baseline_closed_simple_es fine-tuned and saved at models/baseline_closed_simple_es
+2026-02-12 15:55 | INFO | === Running predict ===
+2026-02-12 15:55 | INFO | Predicting with model baseline_closed_simple_cn on L1=cn
+2026-02-12 15:56 | INFO | Getting dev predictions...
+2026-02-12 15:56 | INFO | Saved predictions for baseline_closed_simple_cn on cn dev set: predictions/closed/dev/cn/baseline_closed_simple_cn_preds.csv
+2026-02-12 15:56 | INFO | Predicting with model baseline_closed_simple_de on L1=de
+2026-02-12 15:56 | INFO | Getting dev predictions...
+2026-02-12 15:56 | INFO | Saved predictions for baseline_closed_simple_de on de dev set: predictions/closed/dev/de/baseline_closed_simple_de_preds.csv
+2026-02-12 15:56 | INFO | Predicting with model baseline_closed_simple_es on L1=es
+2026-02-12 15:56 | INFO | Getting dev predictions...
+2026-02-12 15:56 | INFO | Saved predictions for baseline_closed_simple_es on es dev set: predictions/closed/dev/es/baseline_closed_simple_es_preds.csv
+2026-02-12 15:56 | INFO | === Running evaluate ===
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_closed_de_preds.csv on de dev set...
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_closed_simple_de_preds.csv on de dev set...
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_closed_cn_preds.csv on cn dev set...
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_closed_simple_cn_preds.csv on cn dev set...
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_closed_es_preds.csv on es dev set...
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_closed_simple_es_preds.csv on es dev set...
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_open_xx_preds.csv on cn dev set...
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_open_xx_preds.csv on es dev set...
+2026-02-12 15:56 | INFO | Evaluating pred file baseline_open_xx_preds.csv on de dev set...
+2026-02-12 15:56 | INFO | Evaluation summary:
+
+CLOSED TRACK
+------------
+                    model L1  rmse  pearson
+       baseline_closed_es es 1.357    0.748
+baseline_closed_simple_es es 1.408    0.716
+       baseline_closed_de de 1.326    0.753
+baseline_closed_simple_de de 1.358    0.721
+       baseline_closed_cn cn 1.175    0.736
+baseline_closed_simple_cn cn 1.174    0.745
+
+OPEN TRACK
+----------
+           model L1  rmse  pearson
+baseline_open_xx es 1.206    0.787
+baseline_open_xx de 1.149    0.800
+baseline_open_xx cn 1.021    0.804
+2026-02-12 15:56 | INFO | Saved evaluation results to results/results_summary_dev.csv
